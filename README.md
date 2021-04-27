@@ -1,1 +1,1 @@
-# dehack_project
+# Dehackathon Project for the Hack.Diversity Fellowship
