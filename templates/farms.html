@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+{% block main_content %}
+<main class="farms">
+    {% if farms == 'None' %}
+    <p>No farms found!</p>
+    {% endif %}
+    {% for farm in farms %}
+    <div class="farm" id="{{farm['_id']}}">
+      <div class="farm-info">
+        <h3>{{farm['LocationName']}}</h3>
+        <p>Address: {{farm['Address']}} {{farm['City']}}, {{farm['State']}} {{farm['Zip']}}</p>
+        <p>Description: {{farm['Description']}}</p>
+        <p class="button"><a href="{{ url_for('farm', fid= farm['_id']) }}">More details</a></p>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+
+{% endblock %}
