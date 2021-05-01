@@ -16,7 +16,7 @@
     <!-- ________________________________________ -->
 {% block main_content %}
 <body id="page1" style="font-family: Mulish;">
-<div class="about" style=" background-image: url( images/bg.jpg) ; background-size: 100% 100%;">
+<div class="about" style= "background-image: url( {{ url_for('static', filename='images/bg.jpg') }}); background-size: 100% 100%;">
 
 <center><h2 class="headingfind"><span>Find farms and markets near you</span></h2>
 </center>
@@ -35,7 +35,9 @@
 </div>
   <h4 style="color: white; font-size: 22px; margin-top:30px;" >Farming season is all year round, Find events happening near by!</h4>
   <p style="color: black; font-size: 15px; text-align: justify; margin-right: 90px; margin-top: 20px">From farmers markets to community gardens, there’s a place for you to connect with people in your neighborhood or city. to get the best experience, make sure to check out the stories told by our farmers who work hard. Our farmers make sure everyone gets fresh produces at affordable prices. during farming events, not only you will find fresh fruits and vegetables, but also you will socialize with the farmers and their families. There is always events around your neighbourhood, check out the event schedule.</p>
-    <button class="quiz" style="margin-right: 100px;"><span>LET'S DO IT</span></button>
+  <form action="{{ url_for('events')}}">
+  <button class="quiz" style="margin-right: 100px;"><span>Check out events</span></button>
+    </form>
 </div>
    <center><h3 style="padding-top: 20px;background-color: white;color: #01818d; font-weight: bold; ">Stories</h3></center>
 <div class="qualities">

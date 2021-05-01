@@ -2,11 +2,12 @@
   base template used for creating other pages
  -->
 
- <!DOCTYPE html>
+ <!DOCTYPE html >
 <html lang="en">
 <head>
 <title>{{title}}</title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}" type="text/css" media="all">
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}" type="text/css" media="all">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" media="all">
@@ -24,8 +25,8 @@
 {% block navbar %}
 <div class="navbar">
         <a href="{{url_for('index')}}" style="margin-left: 400px">Home</a>
-        <a href="{{url_for('foodtool')}}">Food Tool</a>
         <a href="{{url_for('community')}}">Community</a>
+        <a href="{{url_for('all_farms')}}">Farms</a>
         <a href="{{url_for('events')}}">Events</a>
         <a href="{{url_for('contact')}}">Contact Us</a>
         <a href="" style="float:right; margin-right: 200px;background-color: #fa5a5a;border-radius: 5px;color: white; height: 15px;padding-top: 5px;margin-top: 10px;">Sign up</a>  

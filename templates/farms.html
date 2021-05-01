@@ -3,20 +3,36 @@
 
 
 {% block main_content %}
-<main class="farms">
-    {% if farms == 'None' %}
-    <p>No farms found!</p>
-    {% endif %}
-    {% for farm in farms %}
-    <div class="farm" id="{{farm['_id']}}">
-      <div class="farm-info">
-        <h3>{{farm['LocationName']}}</h3>
-        <p>Address: {{farm['Address']}} {{farm['City']}}, {{farm['State']}} {{farm['Zip']}}</p>
-        <p>Description: {{farm['Description']}}</p>
-        <p class="button"><a href="{{ url_for('farm', fid= farm['_id']) }}">More details</a></p>
-      </div>
+<div class="farms">
+    <div class="farmcontainer">
+        <!-- <h3><center>Development Team</center></h3> -->
+        <br>
+        <article id="content">
+          <div class="wrapperg">
+            <div class="wrapper">
+                {% for farm in farms %}
+              <section class="col1">
+                <span
+                  ><img class="farmimg"
+                    src="{{ url_for('static', filename='images/farm.jpeg') }}"
+                    alt="farm"
+                    height="115" width="180"
+                    />
+                </span>
+                <div class="cols">
+                  <p class="pad_bot1 farm">{{farm['LocationName']}}<br>
+                  <a
+                    href="{{ url_for('farm', fid= farm['_id']) }}"
+                    class="link1"
+                    >More Details</a>
+                  </p>
+                </div>
+              </section>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
     </div>
-    {% endfor %}
-  </main>
+</div>
 
 {% endblock %}
